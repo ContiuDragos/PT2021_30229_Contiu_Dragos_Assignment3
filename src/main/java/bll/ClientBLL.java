@@ -7,6 +7,7 @@ import bll.validators.Validator;
 import dao.ClientDAO;
 import model.Client;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -32,5 +33,27 @@ public class ClientBLL {
         if(cl == null)
             throw new NoSuchElementException("The client with id="+id+" was not found!");
         return cl;
+    }
+
+    public void insertClient(Client client) throws NoSuchElementException, IllegalAccessException {
+        for(Validator<Client> i : validators)
+               i.validate(client);
+        clientDAO.insert(client);
+    }
+
+    public List<Client> findAllClients()
+    {
+        List<Client> list = clientDAO.findAll();
+        if(list == null)
+            throw new NoSuchElementException();
+        return list;
+    }
+
+    public void updateClient(Client client) throws IllegalAccessException {
+        clientDAO.update(client);
+    }
+
+    public void deleteClient(Client client) throws SQLException, IllegalAccessException {
+        clientDAO.delete(client);
     }
 }

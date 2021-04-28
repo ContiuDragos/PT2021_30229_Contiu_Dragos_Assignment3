@@ -1,30 +1,48 @@
 package model;
 
 public class Order {
-    private Client client;
-    private Product product;
+    private int ID;
+    private int clientID;
+    private int productID;
     private int quantity;
 
-    public Order(Client client, Product product, int quantity)
+    public Order(int ID,int clientID, int productID, int quantity)
     {
-        this.client=client;
-        this.product = product;
+        this.ID = ID;
+        this.clientID = clientID;
+        this.productID = productID;
         this.quantity = quantity;
     }
 
-    public Client getClient() {
-        return client;
+    public int getID() {
+        return ID;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
-    public Product getProduct() {
-        return product;
+    public int getClientID() {
+        return clientID;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setClientID(int clientID) {
+        this.clientID = clientID;
+    }
+
+    public int getProductID() {
+        return productID;
+    }
+
+    public void setProductID(int productID) {
+        this.productID = productID;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

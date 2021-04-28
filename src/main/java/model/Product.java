@@ -1,15 +1,15 @@
 package model;
 
 public class Product {
+    private int ID;
     private String name;
-    private int code;
     private int price;
     private int quantity;
 
-    public Product(String name, int code, int price, int quantity)
+    public Product(int ID,String name, int price, int quantity)
     {
         this.name = name;
-        this.code = code;
+        this.ID = ID;
         this.price = price;
         this.quantity = quantity;
     }
@@ -22,12 +22,12 @@ public class Product {
         this.name = name;
     }
 
-    public int getCode() {
-        return code;
+    public int getID() {
+        return ID;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public int getPrice() {
